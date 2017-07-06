@@ -7,7 +7,7 @@ export default class Header extends Component {
       <header className={styles['header']}>
         <nav>
           <a href='/' className={styles['brand']}>
-            Babel Coder Wiki!
+           React Wiki!
           </a>
           <ul className={styles['menu']}>
             <li className={styles['menu__item']}>
