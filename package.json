@@ -4,7 +4,9 @@
   "description": "React Wiki",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline"
+    "start": "npm-run-all --parallel start-dev-api start-dev-ui",
+    "start-dev-api": "json-server --watch api/db.json --routes api/routes.json --port 5000",
+    "start-dev-ui": "webpack-dev-server --hot --inline"
   },
   "author": "Phatcharaphan Ananpreechakun",
   "license": "ISC",
@@ -18,7 +20,9 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.28.4",
+    "json-server": "^0.11.0",
     "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
