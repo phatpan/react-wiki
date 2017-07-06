@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import styles from './Pages.scss'
-
 class Pages extends Component {
   render() {
     return (
-      <table className={styles['table']}>
+      <table className='table'>
       <thead>
           <tr>
             <th>ID</th>
