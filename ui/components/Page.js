@@ -10,7 +10,7 @@ export default class Page extends Component{
             <tr>
                 <td>{id}</td>
                 <td>{title}</td>
-                <td><a href='javascript:void(0)'>Show</a></td>
+                <td><a href='javascript:void(0)'>View</a></td>
             </tr>
         )
     }
