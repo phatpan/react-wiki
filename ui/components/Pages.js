@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import SharedPages from './SharedPages'
+import { PAGES_ENDPOINT } from '../constants/endpoints'
 
 class Pages extends Component {
   state = {
@@ -8,7 +9,7 @@ class Pages extends Component {
   }
 
   componentDidMount(){
-    fetch('/api/v1/pages')
+    fetch(PAGES_ENDPOINT)
     .then((response)=> response.json())
     .then((pages) => {
       this.setState({pages})
