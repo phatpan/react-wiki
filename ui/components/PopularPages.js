@@ -7,7 +7,7 @@ export default class PopularPages extends Component{
         pages: []
     }
     componentDidMount(){
-        fetch('http://127.0.0.1:5000/api/v1/pages?popular=true')
+        fetch('/api/v1/pages?popular=true')
         .then((response)=>response.json())
         .then((pages)=>this.setState({pages}))
     }

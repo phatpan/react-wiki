@@ -8,7 +8,7 @@ class Pages extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:5000/pages/v1/pages')
+    fetch('/api/v1/pages')
     .then((response)=> response.json())
     .then((pages) => {
       this.setState({pages})
