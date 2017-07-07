@@ -7,14 +7,17 @@ export default class PopularPages extends Component{
     state = {
         pages: []
     }
-    componentDidMount(){
+    onReloadPages=()=>{
         fetch(PAGES_POPULAR_ENDPOINT)
         .then((response)=>response.json())
         .then((pages)=>this.setState({pages}))
     }
+    componentDidMount(){
+        this.onReloadPages()
+    }
     render(){
         return (
-            <SharedPages pages={this.state.pages} />
+            <SharedPages pages={this.state.pages} onReloadPages={this.onReloadPages}/>
         )
     }
 }

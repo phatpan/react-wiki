@@ -6,24 +6,30 @@ export default class SharedPages extends Component{
         onReloadPages: PropTypes.func.isRequired
     }
     render(){
-        const {pages} = this.props
+        const {pages, onReloadPages} = this.props
         return (
-            <table className='table'>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        pages.map((page) => (
-                        <Page key={page.id} id={page.id} title={page.title} />
-                        ))
-                    }
-                    </tbody>
-            </table>
+            <div>
+                <button className='button'
+                        onClick={() => onReloadPages()}>
+                        Reload Pages
+                </button><hr/>
+                <table className='table'>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            pages.map((page) => (
+                            <Page key={page.id} id={page.id} title={page.title} />
+                            ))
+                        }
+                        </tbody>
+                </table>
+            </div>
         )
     }
 }
