@@ -18,13 +18,12 @@ export default class ViewPageContainer extends Component{
     componentDidMount(){
         fetch(`${PAGES_ENDPOINT}/${this.props.params.id}`)
             .then((response)=>response.json())
-            .then((view)=>this.setState({view}))
+            .then((page)=>this.setState({page}))
     }
 
     render(){
-        const {id, title, content} = this.props
         return(
-            <ViewPage id={id} title={title} content={content}/>
+            <ViewPage id={this.state.page.id} title={this.state.page.title} content={this.state.page.content}/>
         )
     }
 }

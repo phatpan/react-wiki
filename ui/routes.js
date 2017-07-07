@@ -12,7 +12,7 @@ export default () => {
         <IndexRoute component={Home} />
         <route path='pages'>
           <IndexRoute component={Pages}/>
-          <route path=':id' component={ViewPage}/>
+          <route path=':id' component={ViewPage} />
         </route>
       </Route>
     </Router>
