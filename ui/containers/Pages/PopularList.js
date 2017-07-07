@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import fetch from 'isomorphic-fetch'
-import SharedPages from '../../components/SharedPages'
+import SharedPages from '../../components/pages/SharedPages'
 import { PAGES_POPULAR_ENDPOINT } from '../../constants/endpoints'
 
 export default class PopularPages extends Component{

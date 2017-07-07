@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react'
-import Page from './Page'
+import Page from './List'
 const SharedPages = ({pages, onReloadPages}) => (
     <div>
         <button className='button'
