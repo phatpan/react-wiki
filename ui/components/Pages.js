@@ -3,13 +3,17 @@ import fetch from 'isomorphic-fetch'
 import Page from './Page'
 
 class Pages extends Component {
+  
   state = {
     pages: []
   }
-  ComponentDidMount(){
-    fetch('http://127.0.0.1:5000/api/v1/pages')
+
+  componentDidMount(){
+    fetch('http://localhost:5000/pages/v1/pages')
     .then((response)=> response.json())
-    .then((pages)=>this.setState({pages}))
+    .then((pages) => {
+      this.setState({pages})
+    })
   }
   render() {
     return (
