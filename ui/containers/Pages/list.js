@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
-import SharedPages from './SharedPages'
-import { PAGES_ENDPOINT } from '../constants/endpoints'
+import SharedPages from '../../components/SharedPages'
+import { PAGES_ENDPOINT } from '../../constants/endpoints'
 
 class Pages extends Component {
   state = {
@@ -13,6 +13,10 @@ class Pages extends Component {
     .then((pages) => {
       this.setState({pages})
     })
+  }
+
+  shouldComponentUpdate(_nextProps, nextState){
+    return this.state.pages !== nextState.pages
   }
 
   componentDidMount(){

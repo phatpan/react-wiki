@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import App from './App/App'
 import Home from './components/Home'
-import Pages from './components/Pages'
+import Pages from './containers/Pages/list'
 
 export default () => {
   return (

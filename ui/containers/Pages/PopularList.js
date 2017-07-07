@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import fetch from 'isomorphic-fetch'
-import SharedPages from './SharedPages'
-import { PAGES_POPULAR_ENDPOINT } from '../constants/endpoints'
+import SharedPages from '../../components/SharedPages'
+import { PAGES_POPULAR_ENDPOINT } from '../../constants/endpoints'
 
 export default class PopularPages extends Component{
     state = {
