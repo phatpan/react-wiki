@@ -8,6 +8,7 @@ class PagesContainers extends Component {
   state = {
     pages: []
   }
+  
   onReloadPages=() =>{
     fetch(PAGES_ENDPOINT)
     .then((response)=> response.json())
