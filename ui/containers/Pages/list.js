@@ -1,24 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import fetch from 'isomorphic-fetch'
 import { connect } from 'react-redux'
 import SharedPages from '../../components/pages/SharedPages'
 import { PAGES_ENDPOINT } from '../../constants/endpoints'
+import { loadPages } from '../../actions/page'
 
-class PagesContainers extends Component {
-  state = {
-    pages: []
+class PagesContainer extends Component {
+  static propTypes = {
+    pages: PropTypes.array.isRequired,
+    onLoadPages: PropTypes.func.isRequired
   }
-  
+
   onReloadPages=() =>{
-    fetch(PAGES_ENDPOINT)
-    .then((response)=> response.json())
-    .then((pages) => {
-      this.setState({pages})
-    })
+    this.props.onLoadPages()
   }
 
-  shouldComponentUpdate(_nextProps, nextState){
-    return this.state.pages !== nextState.pages
+  shouldComponentUpdate(nextProps) {
+    return this.props.pages !== nextProps.pages
   }
 
   componentDidMount(){
@@ -26,9 +24,22 @@ class PagesContainers extends Component {
   }
   render() {
     return (
-      <SharedPages pages={this.state.pages} onReloadPages={this.onReloadPages}/>
+      <SharedPages pages={this.props.pages} onReloadPages={this.onReloadPages}/>
     )
   }
 }
 
-export default PagesContainers
+const mapStateToProps = (state) => ({
+  pages: state.pages
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  onLoadPages() {
+    dispatch(loadPages())
+  }
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PagesContainer)
