@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
+import { connect } from 'react-redux'
 import SharedPages from '../../components/pages/SharedPages'
 import { PAGES_ENDPOINT } from '../../constants/endpoints'
 
-class Pages extends Component {
+class PagesContainers extends Component {
   state = {
     pages: []
   }
@@ -29,4 +30,4 @@ class Pages extends Component {
   }
 }
 
-export default Pages
+export default PagesContainers
