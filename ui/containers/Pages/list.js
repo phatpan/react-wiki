@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import fetch from 'isomorphic-fetch'
 import { connect } from 'react-redux'
 import SharedPages from '../../components/pages/SharedPages'
-import { PAGES_ENDPOINT } from '../../constants/endpoints'
 import { loadPages } from '../../actions/page'
 
 class PagesContainer extends Component {
